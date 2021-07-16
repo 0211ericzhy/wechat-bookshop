@@ -1,0 +1,16 @@
+<!--pages/booxshop/booxshop.wxml-->
+<!-- <text>pages/booxshop/booxshop.wxml</text> -->
+<view class="header">
+  <view wx:for="{{arr}}" wx:key="index" class="header_chos {{active_red===index?'edchos':''}}" bindtap="tab"
+    data-index="{{index}}">{{item.name}}</view>
+</view>
+<view wx:if="{{active_red===0}}">
+  <floor wx:if="male" list="{{male}}" title="男生"></floor>
+  <floor wx:if="female" list="{{female}}" title="女生"></floor>
+  <floor wx:if="press" list="{{press}}" title="出版"></floor>
+</view>
+<view wx:else>
+  <ranking wx:if="rankCategory_male" listed="{{rankCategory_male}} " ></ranking>
+  <ranking wx:if="rankCategory_female" listed="{{rankCategory_female}} " ></ranking>
+
+</view>

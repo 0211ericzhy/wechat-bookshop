@@ -1,0 +1,17 @@
+<!--pages/home/home.wxml-->
+<!-- <text>pages/home/home.wxml</text> -->
+<!-- 头部 -->
+<view class="header">
+  <!-- 取消 -->
+  <view class="penimg">
+    <image src="../../assets/pen.png"></image>
+  </view>
+  <!-- 右侧 -->
+  <view class="head_right">
+    <view class="help" bindtap="tohelp">帮助</view>
+    <view class="aginimg">
+      <image src="../../assets/agin.png"></image>
+    </view>
+    
+  </view>
+</view>

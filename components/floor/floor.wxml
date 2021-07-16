@@ -1,0 +1,12 @@
+<!--components/floor/floor.wxml-->
+<!-- <text>components/floor/floor.wxml</text> -->
+<view>
+  <view class="headtit">{{title}}</view>
+  <view  class="bodys">
+  
+    <view wx:for="{{list}}" wx:key="index" class="box">
+      <view class="tit">{{item.name}}</view>
+      <view class="many">{{item.bookCount}}本</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "floor":"../../components/floor/floor",
+    "ranking":"../../components/ranking/ranking"
+  },
+  "navigationBarTitleText": "书城"
+}

@@ -1,0 +1,9 @@
+<!--components/ranking/ranking.wxml-->
+<!-- <text>components/ranking/ranking.wxml</text> -->
+<view >
+<!-- <view>{{title}}</view> -->
+  <view wx:for="{{listed}}" wx:key="index" class="box">
+  <view class="contimg"><image src="{{url+item.cover}}"></image></view>
+    <view class="hottit" >{{item.title}}</view>
+  </view>
+</view>

@@ -1,0 +1,24 @@
+/* pages/help/help.wxss */
+.box{
+  padding: 0px 10px;
+  margin-top: 10rpx;
+}
+.header{
+font-size: 20px;
+height: 30rpx;
+font-weight: 700;
+line-height: 30rpx;
+}
+.header_bottom{
+  height: 50rpx;
+  line-height: 50rpx;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 12px;
+}
+.fons{
+  text-indent: 2em;
+  line-height: 30rpx;
+  font-size: 16rpx;
+  color: gray;
+  border-bottom: 1px solid #eeeeee;
+}

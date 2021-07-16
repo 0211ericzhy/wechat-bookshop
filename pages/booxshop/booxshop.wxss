@@ -1,0 +1,19 @@
+/* pages/booxshop/booxshop.wxss */
+.header{
+height: 80rpx;
+background-color: #f7f7f7;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.header_chos{
+  margin: 0rpx 100rpx;
+  display: flex;
+}
+.edchos{
+  color: red;
+  border-bottom: 2px solid red;
+}
+.boxxx{
+  display: flex;
+}

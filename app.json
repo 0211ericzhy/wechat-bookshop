@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/search/search",
+    "pages/booxshop/booxshop",
+    "pages/help/help"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f75356",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#abc123",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/home/home",
+        "iconPath": "assets/bookstore.png",
+        "selectedIconPath": "assets/bookstore.png"
+      },
+      {
+        "text": "书城",
+        "pagePath": "pages/booxshop/booxshop",
+        "iconPath": "assets/bookrack.png",
+        "selectedIconPath": "assets/bookrack-active.png"
+      },
+      {
+        "text": "搜索",
+        "pagePath": "pages/booxshop/booxshop",
+        "iconPath": "assets/search.png",
+        "selectedIconPath": "assets/search-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
