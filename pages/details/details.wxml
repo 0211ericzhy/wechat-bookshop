@@ -1,0 +1,79 @@
+<!--pages/details/details.wxml-->
+<!-- <text>pages/details/details.wxml</text> -->
+<view class="header">
+  <view class="top"></view>
+  <view class="head_bottom"></view>
+  <view class="head_img" bindtap="open">
+    <image src="{{url+listall.cover}}"></image>
+  </view>
+</view>
+<view class="autur">
+  <view class="auturfont">{{listall.title}}</view>
+  <view class="autured">{{listall.author}}</view>
+</view>
+<view class="chos">
+  <view class="btn">
+    <view class="reading">开始阅读</view>
+    <view class="addcar" wx:if="{{show===false}}" bindtap="addread" >加入书架</view>
+    <view class="addcar" bindtap="removeread" wx:else>已加入</view>
+
+  </view>
+  <view class="star" class="satrimg">
+    <view wx:for="{{ratingscore}}" wx:key="index">
+      <image src='../../assets/redstar.jpg' class="star"></image>
+    </view>
+    <view wx:for="{{5-ratingscore}}" wx:key="index">
+      <image src="../../assets/blackstar.jpg" class="star"></image>
+    </view>
+  </view>
+  <view class="box1">更新至<text class="end">{{listall.lastChapter}}</text></view>
+</view>
+<view class="down">
+  <view class="tab">
+
+    <view class="tabhead">
+      <!-- tab栏 -->
+      <view class="tabh">
+        <view class="tab_dowm {{active_red===index?'active':''}}" wx:for="{{arr}}" wx:key="index" bindtap="change"
+          data-index="{{index}}">{{item}}
+        </view>
+      </view>
+      <!-- 介绍 -->
+      <scroll-view scroll-y="true" style="height: 550rpx;">
+        <view wx:if="{{active_red===0}}">
+          <view class="fonts">简介：{{listall.longIntro}}</view>
+          <view class="allcom">
+            <view class="allcomimg">
+              <image src="../../assets/5701626675978_.pic_hd.jpg"></image>
+            </view>
+            <view>总目录{{listall.chaptersCount}}</view>
+          </view>
+          <view class="last">
+            <view class="last_head">看过这本书的人还在看</view>
+            <view class="angin" bindtap="around">换一换
+              <image src='/assets/agin.png'></image>
+            </view>
+
+          </view>
+          <view class="box111">
+            <view wx:for="{{fistone}}" wx:key='index' class="boxxxx" bindtap="getdetiles" data-items="{{item}}">
+              <view class="recomimg">
+                <image src="{{url+item.cover}}"></image>
+              </view>
+              <view class="bbfont">{{item.title}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+      <!-- 评论 -->
+      <scroll-view scroll-y="true" style="height: 550rpx;">
+        <view wx:if="{{active_red===1}}"></view>
+      </scroll-view>
+    </view>
+
+  </view>
+</view>
+<!-- 大图 -->
+<view class="hid" wx:if="{{flag}}" bindtap="cloes" >
+  <image src="{{url+listall.cover}}" bindlongpress="bindlongpress" data-urls="{{url+listall.cover}}"></image>
+</view>

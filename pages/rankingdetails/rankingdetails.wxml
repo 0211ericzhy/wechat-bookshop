@@ -1,0 +1,18 @@
+<!--pages/rankingdetails/rankingdetails.wxml-->
+<!-- <text>排行详情</text>  -->
+<view class="header" wx:if="{{flag===true}}">
+  <view wx:for="{{arr}}" wx:key="index" class="header_box {{active_red===index?'active_red':''}}" bindtap="active"
+    data-index="{{index}}" >{{item}}</view>
+</view>
+<view>
+  <view class="book_goods" wx:for="{{alllist}}" wx:key="index" bindtap="getdetiles" data-items="{{item}}">
+    <view class="book_img">
+      <image src="{{img+item.cover}}"></image>
+    </view>
+    <view book_right>
+      <view class="tit">{{item.title}}</view>
+      <view class="autur">{{item.author}}</view>
+      <view class="font">{{item.shortIntro}}</view>
+    </view>
+  </view>
+</view>

@@ -3,7 +3,10 @@
     "pages/home/home",
     "pages/search/search",
     "pages/booxshop/booxshop",
-    "pages/help/help"
+    "pages/help/help",
+    "pages/Classificationdetails/Classificationdetails",
+    "pages/rankingdetails/rankingdetails",
+    "pages/details/details"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -29,7 +32,7 @@
       },
       {
         "text": "搜索",
-        "pagePath": "pages/booxshop/booxshop",
+        "pagePath": "pages/search/search",
         "iconPath": "assets/search.png",
         "selectedIconPath": "assets/search-active.png"
       }

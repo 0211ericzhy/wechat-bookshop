@@ -1,0 +1,55 @@
+/* pages/rankingdetails/rankingdetails.wxss */
+.header {
+  height: 70rpx;
+  background-color: #f7f7f7;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+
+.header_box {
+  margin: 0rpx 90rpx;
+}
+
+.active_red {
+  color: red;
+  border-bottom: 1px solid red;
+}
+
+.book_goods {
+  padding: 20rpx 20rpx;
+  height: 300rpx;
+  /* background-color: pink; */
+  border-bottom: 1px solid #eeeeee;
+  display: flex;
+}
+
+.book_img image {
+  width: 200rpx;
+  height: 280rpx;
+  /* background-color: blue; */
+}
+
+.tit {
+  font-size: 17px;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.autur {
+  color: #cecece;
+  font-size: 14px;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.font {
+  color: #cecece;
+  font-size: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+
+}

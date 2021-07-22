@@ -1,18 +1,54 @@
 // pages/home/home.js
+import util from '../../utils/util'
+import api from '../../http/api'
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list: [],
+    url: api.STATIC_HOST,
+    move: false
   },
-// 帮助跳转
-tohelp(){
-  wx.navigateTo({
-    url: "/pages/help/help"
-  })
-},
+  // 帮助跳转
+  tohelp() {
+    wx.navigateTo({
+      url: "/pages/help/help"
+    })
+  },
+  caner() {
+    this.setData({
+      move: true
+    })
+  },
+  close() {
+    this.setData({
+      move: false
+    })
+  },
+  removebook(item){
+    console.log(item.currentTarget.dataset.item);
+    util.removeHistory({key:'book',data:item.currentTarget.dataset.item._id})
+    let abc =util.getHistory({key:'book'})
+    console.log(abc);
+     this.setData({
+      list:abc
+    })
+    // console.log(this.data.list)
+    if(this.data.list.length===0){
+      this.setData({
+        move:false
+      })
+    }
+  },
+  ener(item){
+    console.log(item.currentTarget.dataset.item);
+    let abc =JSON.stringify(item.currentTarget.dataset.item)
+    wx.navigateTo({
+      url: `/pages/details/details?items=${abc}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -31,7 +67,14 @@ tohelp(){
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    console.log(util.getHistory({
+      key: 'book'
+    }));
+    this.setData({
+      list: util.getHistory({
+        key: 'book'
+      })
+    })
   },
 
   /**

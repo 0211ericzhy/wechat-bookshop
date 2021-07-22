@@ -1,7 +1,7 @@
 .box{
   padding-left: 20rpx;
   height: 70rpx;
-  background-color: pink;
+  /* background-color: pink; */
   display: flex;
   align-items: center;
   border-bottom: 1px solid #eeeeee;
@@ -13,4 +13,11 @@
 }
 .hottit{
   margin-left: 10rpx;
+}
+.title{
+  color: #d4d4d4;
+  padding-left: 15rpx;
+  font-size: 20px;
+  height: 90rpx;
+  line-height: 90rpx;
 }

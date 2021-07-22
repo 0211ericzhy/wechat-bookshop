@@ -28,13 +28,13 @@ export default {
   bookInfo({
     book_id
   }) {
-    return fly.get(`/book/?book_id=${book_id}`)
+    return fly.get("/book/"+book_id)
   },
   //相关推荐 // @param book_id 书籍id
   relatedRecommendedBooks({
     book_id
   }) {
-    return fly.get(`/book/?book_id=${book_id}`)
+    return fly.get(`/book/${book_id}/recommend`)
   },
   // 作者名下的书籍 @param author 作者名
   authorBooks({
@@ -77,7 +77,7 @@ export default {
     return fly.get('/book/hot-word')
   },
   //书籍搜索 (分类，书名，作者名)
-  bookSearch() {
+  bookSearch({content}) {
     return fly.get(`/book/fuzzy-search?start=0&limit=50&v=1&query=${content}`)
   },
    //排名分类 
@@ -85,7 +85,7 @@ export default {
     return fly.get(`/ranking/gender`)
   },
   // 排名详情 rank_id 分类ID
-  rankInfo({rank_id}) {
+  rankInfo(rank_id){
     return fly.get(`/ranking/${rank_id}`)
   },
   // 讨论 book_id 书籍id

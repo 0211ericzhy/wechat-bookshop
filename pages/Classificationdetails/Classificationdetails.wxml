@@ -1,0 +1,40 @@
+<!--pages/Classificationdetails/Classificationdetails.wxml-->
+<!-- <text>pages/Classificationdetails/Classificationdetails.wxml</text> -->
+<view>
+  <view class="hot">
+    <view wx:for="{{typeList}}" wx:key="index" class="hot_pic {{active_index===index ?'echos_res':''}}" bindtap="gethot"
+      data-index="{{index}}">{{item.name}}
+    </view>
+  </view>
+  <view class="scvie">
+    <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+      <view class="cater" wx:if="{{list[chooseindex].mins.length !==0}}">
+        <view wx:for="{{list[chooseindex].mins}}" wx:key="index"
+          class="cater_pic {{litle_index === index ? 'echos_res':''}}" bindtap="getlitle" data-index="{{index}}">
+          {{item}}
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view>
+  <view class="bookgoods" wx:for="{{alllist}}" wx:key="index" bindtap="getdetails" data-item="{{item}}">
+    <view class="bookimg">
+      <image src="{{url+item.cover}}"></image>
+    </view>
+    <view class="right">
+      <view class="tit">{{item.title}}</view>
+      <view class="auther">{{item.author}}</view>
+      <view class="font">{{item.shortIntro}}</view>
+      <view class="bottom">
+        <view class="bottom_font">{{item.tags[0]}}</view>
+        <view class="bottom_font1">{{item.tags[1]}}</view>
+        <view class="bottom_font2">{{item.tags[2]}}</view>
+      </view>
+    </view>
+    <!-- <view wx:for="{{item.tags}}" wx:for-index="i" wx:key="i">
+    {{item}}
+    </view> -->
+
+  </view>
+</view>

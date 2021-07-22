@@ -4,7 +4,7 @@
   <view class="headtit">{{title}}</view>
   <view  class="bodys">
   
-    <view wx:for="{{list}}" wx:key="index" class="box">
+    <view wx:for="{{list}}" wx:key="index" class="box" bindtap="onin" data-e="{{item.gender}}" data-index="{{index}}" >
       <view class="tit">{{item.name}}</view>
       <view class="many">{{item.bookCount}}本</view>
     </view>

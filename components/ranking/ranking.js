@@ -7,10 +7,10 @@ Component({
   properties: {
     listed:{
       type:Array,
-      value:'',  
+      value:''
     },
     title:{
-      type:Array,
+      type:String,
       value:''
     }
   },
@@ -26,6 +26,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    rankingdetiles(allitem){
+      // console.log(this.properties.listed);
+      // console.log(allitem.currentTarget.dataset.allitem);
+      console.log(allitem.currentTarget.dataset.allitem);
+      let items=JSON.stringify(allitem.currentTarget.dataset.allitem)
+      wx.navigateTo({
+        url:`/pages/rankingdetails/rankingdetails?items=${items}`
+      })
+    }
   }
 })

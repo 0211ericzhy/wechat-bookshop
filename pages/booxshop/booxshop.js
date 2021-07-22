@@ -6,24 +6,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    arr:[
-      {name:"分类"},
-      {name:"排行"}
+    arr: [{
+        name: "分类"
+      },
+      {
+        name: "排行"
+      }
     ],
-    active_red:0,
-    list:{},
-    male:[],
-    female:[],
-    press:[],
-    rankCategory_male:[],
-    rankCategory_female:[]
+    active_red: 0,
+    list: {},
+    male: [],
+    female: [],
+    press: [],
+    rankCategory_male: [],
+    rankCategory_female: []
 
   },
-  tab(index){
+  tab(index) {
     // console.log(index.currentTarget.dataset.index);
     // 赋值
     this.setData({
-      active_red:index.currentTarget.dataset.index
+      active_red: index.currentTarget.dataset.index
     })
   },
   /**
@@ -45,32 +48,41 @@ Page({
    */
   onShow: function () {
 
-    api.getCats().then((res)=>{
-      console.log(res);
-      this.setData({
-        list:res,
-        // male男生
-        male:res.male,
-        // female 女生
-        female:res.female,
-        // 出版
-        press:res.press
+    api.getCats().then((res) => {
+        // console.log(res);
+        res.male.map((item) => {
+          item.gender = 'male'
+        })
+        res.female.map((item) => {
+          item.gender = 'female'
+        })
+        res.press.map((item) => {
+          item.gender = 'press'
+        })
+        this.setData({
+          list: res,
+          // male男生
+          male: res.male,
+          // female 女生
+          female: res.female,
+          // 出版
+          press: res.press
+        })
+        console.log(this.data.list);
+      }).catch((err) => {
+        console.log('请求失败', err);
+      }),
+      // 排行请求
+      api.rankCategory().then((res) => {
+        // console.log(res);
+        this.setData({
+          rankCategory_male: res.male.splice(0, 6),
+          rankCategory_female: res.female.splice(0, 6)
+        })
+        // console.log( this.data.rankCategory_male);
+      }).catch((err) => {
+        console.log('请求失败', err);
       })
-      // console.log(this.data.list);
-    }).catch((err)=>{
-      console.log('请求失败',err);
-    }),
-    api.rankCategory().then((res)=>{
-      console.log(res);
-      // let boy =res.male.splice(0,6)
-      // let gilr =res.female.splice(0,6)
-      // console.log(abc);
-      this.setData({
-        rankCategory_male:res.male.splice(0,6),
-        rankCategory_female:res.female.splice(0,6)
-      })
-      // console.log( this.data.rankCategory_male);
-    })
   },
 
   /**

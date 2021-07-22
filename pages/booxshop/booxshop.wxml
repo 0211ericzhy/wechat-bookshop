@@ -10,7 +10,7 @@
   <floor wx:if="press" list="{{press}}" title="出版"></floor>
 </view>
 <view wx:else>
-  <ranking wx:if="rankCategory_male" listed="{{rankCategory_male}} " ></ranking>
-  <ranking wx:if="rankCategory_female" listed="{{rankCategory_female}} " ></ranking>
+  <ranking wx:if="rankCategory_male" listed="{{rankCategory_male}}" title="男生"></ranking>
+  <ranking wx:if="rankCategory_female" listed="{{rankCategory_female}}" title="女生"></ranking>
 
 </view>

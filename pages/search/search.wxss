@@ -1,1 +1,108 @@
 /* pages/search/search.wxss */
+
+
+.weui-input {
+  margin-left: 50rpx;
+  margin-top: 15rpx;
+  width: 650rpx;
+  height: 80rpx;
+  background-color: #efefef;
+  border: 1px solid #efefef;
+  border-radius: 20rpx;
+  line-height: 80rpx;
+  text-indent: 1em;
+  text-align: center;
+}
+
+.img {
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  top: -58rpx;
+  left: 142rpx;
+}
+
+.mids {
+  /* margin-top: 100rpx; */
+  height: 400rpx;
+  /* background-color: pink; */
+}
+
+.mid_head {
+  font-size: 25rpx;
+  padding: 0rpx 10rpx;
+  height: 80rpx;
+  /* background-color: skyblue; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.midimg {
+  margin-left: 20rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.box {
+  color: #ffff;
+  padding: 10rpx;
+}
+
+.mid_body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bottom{
+
+}
+.bottom_head{
+  padding: 0rpx 20rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.bottomimg{
+  width: 30rpx;
+  height: 30rpx;
+  padding-left: 20rpx;
+}
+.booksbody{
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  height: 300rpx;
+  /* background-color: pink; */
+}
+.booksimg image{
+  width: 200rpx;
+  height: 280rpx;
+  background-color: #ffff;
+}
+.bookright{
+  padding-left: 20rpx;
+}
+.tit{
+  font-size: 17px;
+  height: 30rpx;
+}
+.autur{
+  margin-top: 20rpx;
+  color: #c6c6c6;
+  font-size: 14px;
+}
+.jies{
+  margin-top: 20rpx;
+  color: #c6c6c6;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+.clooct{
+  margin-top: 20rpx;
+
+  color: #fc9383;
+}

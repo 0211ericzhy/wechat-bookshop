@@ -1,2 +1,50 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<!-- <text>pages/search/search.wxml</text> -->
+<view class="header">
+  <input class="weui-input" placeholder="输入书名或作者名" bindconfirm="getipt" data-value="{{value}}" bindinput="getout"
+    value="{{values}}" confirm-type="search" />
+  <image src="../../assets/search.png" class="img" wx:if="{{show===true}}"></image>
+</view>
+<view>
+  <view wx:if="{{show===true}}">
+    <view class="mids">
+      <view class="mid_head">
+        <view>大家都在搜</view>
+        <view bindtap="change">换一换<image src="../../assets/agin.png" class="midimg"></image>
+        </view>
+      </view>
+      <view class="mid_body">
+        <view wx:for="{{hotwrords}}" wx:key="index" class="box">
+          <view style="background-color:{{colors[index]}}" bindtap="everyon" data-item="{{item}}">{{item.word}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="bottom_head">
+        <view>搜索历史</view>
+        <view >
+          <image bindtap="clearserch" class="bottomimg" src="../../assets/clear.png"></image>
+        </view>
+      </view>
+      <view class="bottom_body">
+      <view class="bottom_font" wx:for="{{oldlist}}" wx:key="index" bindtap="everyons" data-item="{{item}}">{{item.name}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view wx:for="{{bookslist}}" wx:key="index">
+      <view class="booksbody" bindtap="enter" data-item="{{item}}">
+        <view class="booksimg">
+          <image src="{{url+item.cover}}"></image>
+        </view>
+        <view class="bookright">
+          <view class="tit">{{item.title}}</view>
+          <view class="autur">{{item.author}}</view>
+          <view class="jies">{{item.shortIntro}}</view>
+          <view class="clooct">最近收藏{{item.latelyFollower}}</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

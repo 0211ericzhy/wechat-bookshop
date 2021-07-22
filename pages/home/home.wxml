@@ -3,8 +3,11 @@
 <!-- 头部 -->
 <view class="header">
   <!-- 取消 -->
-  <view class="penimg">
-    <image src="../../assets/pen.png"></image>
+  <view class="penimg" wx:if="{{move===false}}">
+    <image src="../../assets/pen.png" bindtap="caner"></image>
+  </view>
+  <view class="penimg" wx:else>
+    <image src="../../assets/close.pic" bindtap="close"></image>
   </view>
   <!-- 右侧 -->
   <view class="head_right">
@@ -12,6 +15,14 @@
     <view class="aginimg">
       <image src="../../assets/agin.png"></image>
     </view>
-    
+
+  </view>
+</view>
+<view class="bodys">
+  <view wx:for="{{list}}" wx:key="index" class="bigbox {{move===true?'moves':''}}" bindtap="ener" data-item="{{item}}"  >
+    <image src="{{url+item.cover}}"></image>
+    <view>{{item.title}}</view>
+    <view class="ffont">更新到：{{item.lastChapter}}</view>
+    <image src="../../assets/close.pic" class="imgs" wx:if="{{move===true}}" catchtap="removebook" data-item="{{item}}"></image>
   </view>
 </view>
